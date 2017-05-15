@@ -17,9 +17,10 @@ var	commentRoute		=	require("./routes/comments.js"),
 	campgroundRoutes	=	require("./routes/campgrounds.js"),
 	indexRoutes			=	require("./routes/index.js");
 
-//mongoose.connect("mongodb://127.0.0.1/yelp_camp")
+var url = process.env.DATABASEURL || "mongodb://127.0.0.1/yelp_camp"
 
-mongoose.connect("mongodb://yelpDB:yelpDB_vkviswa@ds143231.mlab.com:43231/vinod_yelpcamp");
+
+mongoose.connect(url);
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(methodOverride("_method"));
@@ -62,11 +63,12 @@ app.use("/campgrounds/:id/comments",commentRoute); //comments routes will get /c
 //seedDB();
 
 
+
 app.listen(process.env.PORT, process.env.IP);
 
 
 /*app.listen(3000, function(){
 
 	console.log("Yelp ready");
-});*/
-
+});
+*/
