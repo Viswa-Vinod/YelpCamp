@@ -64,9 +64,9 @@ app.use("/campgrounds/:id/comments",commentRoute); //comments routes will get /c
 
 app.listen(process.env.PORT, process.env.IP);
 
-/*
-app.listen(3000, function(){
+
+/*app.listen(3000, function(){
 
 	console.log("Yelp ready");
-});
-*/
+});*/
+
