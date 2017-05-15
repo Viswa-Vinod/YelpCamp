@@ -1,16 +1,16 @@
 <% include partials/header %>
 	
 <div class="row">
-	<h1 style = "text-align:center">
+	<h1 style = "text-align:center; width:30%; margin:auto">
 		Sign-UP
 	</h1>
 
-	<div style="width:30%; margin: 25px auto; padding-left: 80px">
+	<div class="form-group" style="width:30%; margin: 20px auto">
 		<form action="/register" method="post">
 			
-			<input type="text" name="username" placeholder="username">
-			<input type="password" name="password" placeholder="password">
-			<button>Sign-UP</button>
+			<input type="text" name="username" placeholder="username" class="form-control">
+			<input type="password" name="password" placeholder="password" class="form-control">
+			<button class="btn btn-primary">Sign-UP</button>
 
 		</form>
 		<a href="/campgrounds">Go Back</a>

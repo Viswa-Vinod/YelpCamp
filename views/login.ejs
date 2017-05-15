@@ -3,14 +3,14 @@
 
 <div class="row">
 
-	<h1 style="text-align: center">	Login </h1>
+	<h1 style="text-align: center; width: 30%; margin:auto">	Login </h1>
 
-	<div style="width:30%; margin:25px auto; padding-left: 80px">
-		<form action="/login" method="post">
+	<div class="form-group" style="width:30%; margin:20px auto">
+		<form action="/login" method="post" >
 			
-			<input type="text" name="username" placeholder="username">
-			<input type="password" name="password" placeholder="password">
-			<button>Sign-In</button>
+			<input type="text" name="username" placeholder="username" class="form-control">
+			<input type="password" name="password" placeholder="password" class="form-control">
+			<button class="btn btn-primary">Sign-In</button>
 
 		</form>
 		<a href="/campgrounds">Go Back</a>
