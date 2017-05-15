@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+	<title>Yelp Camp Demo</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+	
+ </head>
+
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle Navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a href="/" class="navbar-brand">YelpCamp</a>
+			
+		</div>
+		
+		<div id="navbar" class="collapse navbar-collapse">
+			<ul class="nav navbar-nav" >
+				<li class="<%= typeof page !== 'undefined' && page === 'campgrounds' ? 'active' : '' %>"><a href="/campgrounds">Home</a> 	 </li>
+			</ul>
+
+			<ul class="nav navbar-nav navbar-right">
+				<% if (!currentUser) { %>   
+
+				<!--It's simply a single line if/else statement that says "if there is a local variable named page and it is equal to the string 'campgrounds' then give this list item a class of 'active' otherwise (else) don't give it any class at all.
+ 				We pass the local variable, 'page', into each view via the res.render() method -->
+					<li class="<%= typeof page !== 'undefined' && page === 'login' ? 'active' : '' %>"><a href="/login">Login</a></li> 
+					<li class="<%= typeof page !== 'undefined' && page === 'register' ? 'active' : '' %>"><a href="/register">Sign-Up</a></li>
+				<% } else {%>
+					<li><a href="#">Signed in As <%= currentUser.username %></a></li>
+					<li><a href="/logout">Logout</a></li>
+				<% } %>
+			</ul>
+		</div>
+	</div>
+	
+</nav>
+
+<div class="container">
+
+<!-- error and success are defined in app.js. So they are never undefined. So if (error) and if(success) is always truthy and hence you need the length check as well -->
+
+	<% if (error && error.length > 0) { %>
+		<div class="alert alert-danger" role="alert">
+			 <%= error %>
+		</div>
+	 <% } %>
+
+	<% if (success && success.length > 0) { %>
+	 
+		<div class="alert alert-success" role="alert">
+			 <%= success %>
+		</div>
+	<% } %>
+</div>
+
+<div class="container">
+	
+

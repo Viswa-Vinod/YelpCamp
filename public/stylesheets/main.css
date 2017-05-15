@@ -1,0 +1,39 @@
+.thumbnail img {
+
+	width:100%;
+	height: 150px;
+
+}
+
+.thumbnail {
+
+	padding: 0;
+}
+
+.thumbnail .caption-full{
+
+	padding:9px;
+}
+
+#delCampground {
+
+	display: inline;
+}
+
+#delComment {
+
+	display:inline;
+}
+
+#map {
+
+	height: 400px;
+	width: 100%;
+}
+
+
+
+.navbar * {
+
+	color: #fff !important;
+}
