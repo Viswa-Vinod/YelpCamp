@@ -37,3 +37,8 @@
 
 	color: #fff !important;
 }
+
+#btn-signIn, #btn-signUp {
+
+	margin-top: 5px;
+}
